@@ -1,0 +1,18 @@
+{
+   "compilerOptions": {
+      "lib": [
+         "es6"
+      ],
+      "target": "es6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "./build",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "paths": {
+         "src/*": ["./src/*"],
+      },
+      "strict": true
+   },
+}
