@@ -1,9 +1,14 @@
-import { AppDataSource } from "./data-source";
+import { DataSource } from "typeorm";
+import { AppDataSourceMSSQL, AppDataSourcePostgres } from "./data-source";
 import { Album } from "./entity/Example";
 
-AppDataSource.initialize().then(async dataSource => {
+
+const run = async (dataSource: DataSource) => {
     const repo = dataSource.getRepository(Album);
-    await repo.save({numberOfLikes: 4123, albumId: 123, title: "test"});
-    console.log(await repo.createQueryBuilder().getOne());
-    console.log(await repo.createQueryBuilder().select(["Album.albumId", "Album.numberOfLikes", "Album.total", "Album.title"]).getOne());
-})
+    await repo.save({albumId: 123, total: 1.98, otherNumberic: 5});
+    console.log(dataSource.driver.options.type, await repo.createQueryBuilder().getOne());
+    console.log(dataSource.driver.options.type, await repo.find())
+}
+
+AppDataSourcePostgres.initialize().then(run)
+AppDataSourceMSSQL.initialize().then(run)

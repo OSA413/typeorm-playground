@@ -7,3 +7,12 @@ services:
       POSTGRES_USER: "test"
       POSTGRES_PASSWORD: "test"
       POSTGRES_DB: "test"
+
+  mssql:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: "typeorm-mssql"
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "Admin12345"
+      ACCEPT_EULA: "Y"

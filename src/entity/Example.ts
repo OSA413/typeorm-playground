@@ -2,15 +2,12 @@ import { AfterLoad, Column, Entity, Index, ManyToOne, PrimaryColumn, PrimaryGene
 
 @Entity("album")
 export class Album {
-    @PrimaryColumn({name: "album_id", primaryKeyConstraintName: "album_pkey"})
+    @PrimaryColumn({name: "album_id"})
     albumId!: number;
 
-    @Column({name: "title"})
-    title!: string;
-
-    @Column({type: "numeric", nullable: true})
+    @Column({type: "numeric", precision: 10, scale: 2})
     total!: number;
 
-    @Column({name: "number_of_likes"})
-    numberOfLikes!: number;
+    @Column({type: "numeric", precision: 10, scale: 2})
+    otherNumberic!: number;
 }
