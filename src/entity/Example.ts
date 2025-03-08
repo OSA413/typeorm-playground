@@ -8,6 +8,6 @@ export class Album {
     @Column({type: "numeric", precision: 10, scale: 2})
     total!: number;
 
-    @Column({type: "numeric", precision: 10, scale: 2})
-    otherNumberic!: number;
+    @Column({name: "number_of_likes", type: "numeric", precision: 10, scale: 2})
+    numberOfLikes!: number;
 }
