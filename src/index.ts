@@ -8,8 +8,8 @@ const run = async (dataSource: DataSource) => {
     // Crash
     // console.log(await repo.createQueryBuilder().select(`total`).getOne());
 
-    // OK, but returns null
-    console.log(await repo.createQueryBuilder().select(`"total"`).getOne());
+    // OK
+    console.log(await repo.createQueryBuilder("album").select(`album.total`).getOne());
 
     // OK
     console.log(await repo.find({select: {total: true}}))
