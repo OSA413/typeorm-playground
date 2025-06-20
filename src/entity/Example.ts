@@ -1,13 +1,17 @@
-import { AfterLoad, Column, Entity, Index, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm"
+import { AfterLoad, Column, Entity, Index, JoinColumn, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm"
 
-@Entity("album")
-export class Album {
-    @PrimaryColumn({name: "album_id"})
-    albumId!: number;
+@Entity("employee")
+export class Employee {
+    // employee_id INT NOT NULL,
+    // CONSTRAINT employee_pkey PRIMARY KEY  (employee_id)
+    @PrimaryColumn({ name: "employee_id", primaryKeyConstraintName: "employee_pkey" })
+    employeeId!: number;
 
-    @Column({type: "numeric", precision: 10, scale: 2})
-    total!: number;
-
-    @Column({name: "number_of_likes", type: "numeric", precision: 10, scale: 2})
-    numberOfLikes!: number;
+    // birth_date TIMESTAMP,
+    @Column({ name: "birth_date", nullable: true })
+    birthDate!: Date;
+    
+    // hire_date TIMESTAMP,
+    @Column({ name: "hire_date", nullable: true })
+    hireDate!: Date;
 }

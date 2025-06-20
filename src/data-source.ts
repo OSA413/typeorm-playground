@@ -1,21 +1,13 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { Album } from "./entity/Example"
+import { Employee } from "./entity/Example"
 
 export const AppDataSourcePostgres = new DataSource({
-    "name": "oracle",
-    "type": "oracle",
-    "host": "localhost",
-    "port": 1521,
-    "serviceName": "XEPDB1",
-    "username": "typeorm",
-    "password": "oracle",
-    "logging": true,
-    "extra": {
-      "connectString": "localhost:1521/XEPDB1"
-    },
+    "name": "sqlite",
+    "type": "sqlite",
+    "database": "./temp/sqlitedb-1.db",
     synchronize: true,
-    entities: [Album],
+    entities: [Employee],
     migrations: [],
     migrationsRun: true,
     subscribers: [],
