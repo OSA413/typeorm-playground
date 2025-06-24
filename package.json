@@ -5,12 +5,13 @@
    "type": "commonjs",
    "devDependencies": {
       "@faker-js/faker": "^9.8.0",
+      "@types/node": "^24.0.4",
       "typescript": "5.7.3"
    },
    "dependencies": {
       "sqlite3": "^5.1.7",
       "ts-node": "10.9.1",
-      "typeorm": "0.3.25"
+      "typeorm": "https://pkg.pr.new/typeorm/typeorm@11545"
    },
    "scripts": {
       "start": "ts-node src/index.ts",
