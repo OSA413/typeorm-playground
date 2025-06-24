@@ -1,6 +1,5 @@
-import "reflect-metadata"
-import { DataSource } from "typeorm"
-import { Employee } from "./entity/Example"
+import { DataSource, EntitySchema } from "typeorm"
+import { Category } from "./entity/Example"
 
 export const AppDataSourcePostgres = new DataSource({
     "name": "sqlite",
@@ -8,7 +7,7 @@ export const AppDataSourcePostgres = new DataSource({
     "database": "./temp/sqlitedb-1.db",
     logging: true,
     synchronize: true,
-    entities: [Employee],
+    entities: [new EntitySchema(Category)],
     migrations: [],
     migrationsRun: true,
     subscribers: [],
