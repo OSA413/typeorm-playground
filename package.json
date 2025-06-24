@@ -4,13 +4,13 @@
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",
    "devDependencies": {
-      "typescript": "5.7.3",
-      "@faker-js/faker": "^9.8.0"
+      "@faker-js/faker": "^9.8.0",
+      "typescript": "5.7.3"
    },
    "dependencies": {
-      "ts-node": "10.9.1",
       "sqlite3": "^5.1.7",
-      "typeorm": "^0.3.25"
+      "ts-node": "10.9.1",
+      "typeorm": "0.3.25"
    },
    "scripts": {
       "start": "ts-node src/index.ts",
